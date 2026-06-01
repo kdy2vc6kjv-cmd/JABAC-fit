@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JABAC FIT | Centro Deportivo Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-principal: #0d0d0d;
+            --bg-tarjetas: #161616;
+            --verde-neon: #00ff88;
+            --verde-oscuro: #00aa66;
+            --texto-blanco: #ffffff;
+            --texto-gris: #a0a0a0;
+            --transicion: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-principal);
+            color: var(--texto-blanco);
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 2px solid linear-gradient(90deg, transparent, var(--verde-neon), transparent);
+        }
+
+        header h1 {
+            color: var(--verde-neon);
+            font-size: 4rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        }
+
+        header p {
+            font-size: 1.3rem;
+            color: var(--texto-gris);
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        /* NAVEGACIÓN */
+        nav {
+            background: rgba(0, 170, 102, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            text-align: center;
+            padding: 15px;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: var(--texto-blanco);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: var(--transicion);
+        }
+
+        nav a:hover {
+            color: var(--bg-principal);
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        /* SECCIONES GENERALES */
+        section {
+            padding: 80px 10%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: var(--verde-neon);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--verde-neon);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* HERO SECCIÓN */
+        .hero {
+            text-align: center;
+            background: radial-gradient(circle, #1a1a1a 0%, #0d0d0d 100%);
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--texto-gris);
+        }
+
+        /* GRID DE TARJETAS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-tarjetas);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid #222;
+            transition: var(--transicion);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--verde-neon);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.15);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: var(--texto-blanco);
+        }
+
+        .card p {
+            color: var(--texto-gris);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* TABLA DE PRECIOS */
+        .table-container {
+            overflow-x: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-radius: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-tarjetas);
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+
+        th {
+            background: var(--verde-oscuro);
+            color: var(--texto-blanco);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            color: var(--verde-neon);
+            font-weight: 700;
+        }
+
+        .promo-text {
+            text-align: center;
+            margin-top: 25px;
+            font-style: italic;
+            color: var(--texto-gris);
+        }
+
+        /* MARKETING SECCIÓN */
+        #marketing h3 {
+            color: var(--verde-neon);
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            color: var(--texto-gris);
+        }
